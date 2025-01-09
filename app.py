@@ -11,7 +11,7 @@ from nltk.stem import WordNetLemmatizer
 # Cache data loading
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r'C:\Drive D\UM\Y3S1\WIH3001 DSP\Latest Project\df_for_recommender.csv')
+    df = pd.read_csv('df_for_recommender.csv')
     return df
 
 data = load_data()
