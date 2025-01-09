@@ -7,6 +7,7 @@ import joblib
 import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import pickle
 
 # Cache data loading
 @st.cache_data
