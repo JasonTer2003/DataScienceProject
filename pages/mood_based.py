@@ -9,6 +9,7 @@ import pickle
 # Ensure the stopwords are downloaded
 import nltk
 nltk.download('stopwords')
+nltk.download('wordnet')
 
 # Load trained models
 import zipfile
