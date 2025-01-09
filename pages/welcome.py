@@ -7,7 +7,7 @@ st.write("""#### Tailored specially for you! Discover music that matches your mo
 
 st.divider()
 
-st.image("\background.jpg", caption="Image generated using DeepAI", use_container_width=True)
+st.image("background.jpg", caption="Image generated using DeepAI", use_container_width=True)
 
 st.subheader("Background")
 st.write("Mood is highly connected to music where emotional content has become an important factor affecting music selection today. This statement is supported by Bhosale et al. (2024) where most people listen to music that suits their current mood or helps them transition to a different mood.")
