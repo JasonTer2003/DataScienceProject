@@ -6,6 +6,10 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import pickle
 
+# Ensure the stopwords are downloaded
+import nltk
+nltk.download('stopwords')
+
 # Load trained models
 import zipfile
 import os
