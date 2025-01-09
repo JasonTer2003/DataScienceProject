@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.image(r"C:\Drive D\UM\Y3S1\WIH3001 DSP\Logo\logo.png", width=250)
+st.image("logo.png", width=250)
 
 st.title("Your Music Recommendation System \U0001F3B6")
 st.write("""#### Tailored specially for you! Discover music that matches your mood or find similar songs easily. \U0001F3A7""")
