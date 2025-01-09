@@ -11,20 +11,21 @@ import nltk
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-# Load trained models
 import zipfile
 import os
+import pickle
 
-# Specify the path to the zip file and the extraction directory
+# Specify the path to the zip file
 zip_file_path = 'rf_model.zip'
-extraction_dir = 'extracted_model/'
 
-# Unzip the file
+# Unzip the file directly into the main directory
 with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-    zip_ref.extractall(extraction_dir)
+    zip_ref.extractall()  # Extract to the current working directory
 
-# Now, load the model from the extracted file
-model_path = os.path.join(extraction_dir, 'rf_model.pkl')
+# Check if the model file exists in the main directory
+model_path = 'rf_model.pkl'  # Model should now be in the main directory
+          
+# Load the model from the extracted file
 with open(model_path, "rb") as file:
     rf_model = pickle.load(file)
 
