@@ -118,9 +118,21 @@ def get_similar_songs(song_name, top_n=5):
     # Return the top N similar songs
     return similar_songs[['name', 'artists', 'popularity', 'YouTube Link', 'Spotify Link']].head(top_n)
 
-# Load trained models
-with open("rf_model.pkl", "rb") as file:
-    rf_model = joblib.load(file)
+import zipfile
+import os
+
+# Specify the path to the zip file and the extraction directory
+zip_file_path = 'rf_model.zip'
+extraction_dir = 'extracted_model/'
+
+# Unzip the file
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+    zip_ref.extractall(extraction_dir)
+
+# Now, load the model from the extracted file
+model_path = os.path.join(extraction_dir, 'rf_model.pkl')
+with open(model_path, "rb") as file:
+    rf_model = pickle.load(file)
 
 with open("tfidf_parameters.pkl", "rb") as file:
     tfidf_vect = joblib.load(file)
