@@ -2,7 +2,7 @@ import streamlit as st
 
 # Config
 st.set_page_config(layout='wide')
-image = r"C:\Drive D\UM\Y3S1\WIH3001 DSP\Logo\transparent_logo.png"
+image = "transparent_logo.png"
 st.logo(image, icon_image=image)
 st.sidebar.markdown("Welcome to Mumo!")
 st.sidebar.markdown("A Music Recommendation System Based on Mood Prediction")
