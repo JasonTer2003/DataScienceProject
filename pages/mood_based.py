@@ -30,6 +30,10 @@ rf_model = joblib.load(model_path)
 # Verify the type of the model
 print(f"Model loaded successfully. Type: {type(rf_model)}")
 
+# Load the trained TfidfVectorizer model
+with open("tfidf_parameters.pkl", "rb") as file:
+    tfidf_vect = joblib.load(file)
+
 # Cache data loading
 @st.cache_data
 def load_data():
