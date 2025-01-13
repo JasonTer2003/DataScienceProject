@@ -12,8 +12,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 import zipfile
-import os
-import pickle
+import joblib
 
 # Specify the path to the zip file
 zip_file_path = 'rf_model.zip'
@@ -24,13 +23,12 @@ with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
 
 # Check if the model file exists in the main directory
 model_path = 'rf_model.pkl'  # Model should now be in the main directory
-          
-# Load the model from the extracted file
-with open(model_path, "rb") as file:
-    rf_model = pickle.load(file)
 
-with open("tfidf_parameters.pkl", "rb") as file:
-    tfidf_vect = joblib.load(file)
+# Load the model from the extracted file using joblib
+rf_model = joblib.load(model_path)
+
+# Verify the type of the model
+print(f"Model loaded successfully. Type: {type(rf_model)}")
 
 # Cache data loading
 @st.cache_data
