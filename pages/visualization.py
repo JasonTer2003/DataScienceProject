@@ -14,13 +14,13 @@ data = load_data()
 
 def listening_habits_dashboard():
     # Display static images
-    img = Image.open('listening_habits_dashboard.png")
+    img = Image.open('listening_habits_dashboard.png')
     st.image(img, caption="Listening Habits of Malaysia Listeners")
 
 
 def worldwide_dashboard():
     # Display static images
-    img = Image.open('worldwide_dashboard.png")
+    img = Image.open('worldwide_dashboard.png')
     st.image(img, caption="Analysis of Song Features Worldwide Dashboard")
 
 st.title("\U0001F4CA Visualization")
