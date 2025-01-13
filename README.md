@@ -1,7 +1,7 @@
 # DataScienceProject
-Your Music Recommendation System 🎶
+# Your Music Recommendation System 🎶
 Tailored specially for you! Discover music that matches your mood or find similar songs easily. 🎧
-0
+
 Image generated using DeepAI
 Background
 Mood is highly connected to music where emotional content has become an important factor affecting music selection today. This statement is supported by Bhosale et al. (2024) where most people listen to music that suits their current mood or helps them transition to a different mood.
