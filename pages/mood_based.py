@@ -21,14 +21,9 @@ zip_file_path = 'rf_model.zip'
 with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
     zip_ref.extractall()  # Extract to the current working directory
 
-# Check if the model file exists in the main directory
-model_path = 'rf_model.pkl'  # Model should now be in the main directory
-
-# Load the model from the extracted file using joblib
-rf_model = joblib.load(model_path)
-
-# Verify the type of the model
-print(f"Model loaded successfully. Type: {type(rf_model)}")
+# Load the trained rf_model
+model_path = 'rf_model.pkl'  # Check if the model file exists in the main directory
+rf_model = joblib.load(model_path)  # Load the model from the extracted file using joblib
 
 # Load the trained TfidfVectorizer model
 with open("tfidf_parameters.pkl", "rb") as file:
@@ -81,22 +76,8 @@ def preprocessed_data(text):
 
 # Mood prediction function
 def predict_mood(rf_model, text_input):
-    try:
-        # Ensure text_input is a 2D array
-        if len(text_input.shape) == 1:
-            text_input = text_input.reshape(1, -1)
-        
-        # Predict mood
-        mood_prediction = rf_model.predict(text_input)
-        return pd.DataFrame({"Emotion": mood_prediction}, index=[0])
-    except Exception as e:
-        print(f"Error during prediction: {e}")
-        raise
-
-# Mood prediction function
-# def predict_mood(rf_model, text_input):
-#     mood_prediction = rf_model.predict(text_input)
-#     return pd.DataFrame({"Emotion": mood_prediction}, index=[0])
+    mood_prediction = rf_model.predict(text_input)
+    return pd.DataFrame({"Emotion": mood_prediction}, index=[0])
 
 # Song recommendation based on mood
 def Recommend_Songs(text, df):
