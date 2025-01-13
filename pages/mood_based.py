@@ -79,8 +79,22 @@ def preprocessed_data(text):
 
 # Mood prediction function
 def predict_mood(rf_model, text_input):
-    mood_prediction = rf_model.predict(text_input)
-    return pd.DataFrame({"Emotion": mood_prediction}, index=[0])
+    try:
+        # Ensure text_input is a 2D array
+        if len(text_input.shape) == 1:
+            text_input = text_input.reshape(1, -1)
+        
+        # Predict mood
+        mood_prediction = rf_model.predict(text_input)
+        return pd.DataFrame({"Emotion": mood_prediction}, index=[0])
+    except Exception as e:
+        print(f"Error during prediction: {e}")
+        raise
+
+# Mood prediction function
+# def predict_mood(rf_model, text_input):
+#     mood_prediction = rf_model.predict(text_input)
+#     return pd.DataFrame({"Emotion": mood_prediction}, index=[0])
 
 # Song recommendation based on mood
 def Recommend_Songs(text, df):
