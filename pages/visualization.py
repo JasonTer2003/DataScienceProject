@@ -15,7 +15,7 @@ data = load_data()
 def listening_habits_dashboard():
     # Display static images
     img = Image.open('listening_habits_dashboard.png')
-    st.image(img, caption="Listening Habits of Malaysia Listeners")
+    st.image(img, caption="Listening Habits of Malaysia Listeners Dashboard")
 
 
 def worldwide_dashboard():
